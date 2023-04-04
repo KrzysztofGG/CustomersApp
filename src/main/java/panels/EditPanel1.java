@@ -54,6 +54,7 @@ public class EditPanel1 extends JPanel {
                     inputField.setText("");
                     EditPanel2 editPanel2 = parent.getEditPanel2();
                     editPanel2.getNameField().setText(c.getName());
+                    editPanel2.setOldName(c.getName());
                     editPanel2.getAddressField().setText(c.getAddress());
                     editPanel2.getVatField().setText(c.getVatId());
                     parent.getLayout().show(parent.getMainPanel(), "Edit2");

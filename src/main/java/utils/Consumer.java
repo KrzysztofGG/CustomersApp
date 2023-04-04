@@ -15,7 +15,7 @@ public class Consumer {
         this.vatId = vatId;
         this.date = new Date(System.currentTimeMillis());
         this.address = address;
-        formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        formatter= new SimpleDateFormat("yyyy-MM-dd");
     }
 
     public String getName() {
@@ -52,9 +52,11 @@ public class Consumer {
 
     @Override
     public String toString() {
-        return String.format("Name: %s " +
-                            "VatId: %s " +
-                            "Address: %s", name, vatId, address);
+//        return String.format("Name: %s " +
+//                            "VatId: %s " +
+//                            "Date: " + formatter.format(date) +
+//                            "Address: %s", name, vatId, address);
+        return String.format("%s %s %s %s", name, vatId, formatter.format(date), address);
     }
 
 }
