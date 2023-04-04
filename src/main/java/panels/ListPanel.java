@@ -24,12 +24,8 @@ public class ListPanel extends JPanel {
 
         list = new JList(consumers.toArray());
         list.setFixedCellWidth(parent.FRAME_SIZE - 100);
-        list.setFixedCellHeight(50);
-        list.setLayoutOrientation(JList.VERTICAL_WRAP);
-        for(Consumer c :consumers){
-            JLabel l = new JLabel(c.toString());
-            add(l);
-        }
-//        add(list);
+        list.setLayoutOrientation(JList.VERTICAL);
+
+        add(new JScrollPane(list));
     }
 }

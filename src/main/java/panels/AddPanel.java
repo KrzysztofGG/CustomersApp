@@ -23,25 +23,24 @@ public class AddPanel extends JPanel {
         title = new JLabel("Add new Consumer");
         title.setFont(new Font("Arial", Font.PLAIN, 30));
 
-
         name = new JLabel("Name");
         name.setFont(new Font("Arial", Font.PLAIN, 30));
-
-
-        address = new JLabel("Address");
-        address.setFont(new Font("Arial", Font.PLAIN, 30));
 
         vatId = new JLabel("vatId");
         vatId.setFont(new Font("Arial", Font.PLAIN, 30));
 
+        address = new JLabel("Address");
+        address.setFont(new Font("Arial", Font.PLAIN, 30));
+
         nameField = new JTextField();
         nameField.setFont(new Font("Arial", Font.PLAIN, 25));
+
+        vatField = new JTextField();
+        vatField.setFont(new Font("Arial", Font.PLAIN, 25));
 
         addressField = new JTextField();
         addressField.setFont(new Font("Arial", Font.PLAIN, 25));
 
-        vatField = new JTextField();
-        vatField.setFont(new Font("Arial", Font.PLAIN, 25));
 
         submit = new JButton("Submit");
         submit.setSize(50, 50);
@@ -58,14 +57,16 @@ public class AddPanel extends JPanel {
                 vatField.setText("");
 
 
-                Consumer newConsumer = new Consumer(name, address, vat);
                 if(!parent.getNames().contains(name)){
+                Consumer newConsumer = new Consumer(name, vat, address);
 
                     parent.getNames().add(name);
                     parent.getConsumers().
                             add(newConsumer);
+
                     parent.getListPanel().
                             setList(parent.getConsumers());
+
                     title.setText("Add new Consumer");
                 }
                 else{

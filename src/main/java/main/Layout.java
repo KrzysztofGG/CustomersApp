@@ -31,6 +31,8 @@ public class Layout extends JFrame {
         this.setSize(FRAME_SIZE, FRAME_SIZE);
         this.setResizable(false);
         consumers = new ArrayList<>();
+//        consumers.add(new Consumer("a", "", ""));
+//        consumers.add(new Consumer("b", "", ""));
         names = new ArrayList<>();
         createLayout();
 
@@ -142,4 +144,7 @@ public class Layout extends JFrame {
     }
     public List<String> getNames(){return names;}
 
+    public void setConsumers(ArrayList<Consumer> consumers) {
+        this.consumers = consumers;
+    }
 }

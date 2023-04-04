@@ -39,6 +39,7 @@ public class DeletePanel extends JPanel {
                 for(int i=0; i<parent.getConsumers().size(); ++i){
                     if(parent.getConsumers().get(i).getName().equals(name)){
                         parent.getConsumers().remove(i);
+                        parent.getNames().remove(i);
                         parent.getListPanel().setList(parent.getConsumers());
                         deleted = true;
                         break;
@@ -47,7 +48,9 @@ public class DeletePanel extends JPanel {
                 if(!deleted)
                     textLabel.setText("No such Consumer");
                 else
-                    textLabel.setText("Put in name od consumer to delete:");
+                    textLabel.setText("Put in name of consumer to delete:");
+
+                inputField.setText("");
             }
         });
 
